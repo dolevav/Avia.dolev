@@ -1,0 +1,26 @@
+* {
+    color: blue;
+    background-color: gray;
+    font-family: Ariel, Hevtica, sans-serif;
+    font-size: 25px;
+}
+
+    h1 {
+    color: black;
+    font-size: 40px;
+
+    }
+
+    .heading {
+        color: green;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid white;
+        margin: 10px   
+
+    }
+
+    #heading2 {
+        color: hotpink
+
+    }
