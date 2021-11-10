@@ -1,0 +1,34 @@
+:root {
+    --lightGreen:  rgb(109, 166, 148);;
+}
+
+* {
+    font-family: myFirstfont;
+}
+
+label{
+    font-family: myFontP;
+}
+
+h1 {
+    font-family: myFontP;
+}
+
+#comment { /*id x1*/
+    background-color: var(--lightGreen);
+
+}
+
+form {/*name*/
+    border: 2px solid rgb(129, 67, 67);
+}
+
+@font-face {
+    font-family: myFirstfont;
+    src: url(Raleway-Thin.ttf);
+}
+
+@font-face {
+    font-family: MyFontP;
+    src: url(Raleway-Medium.ttf);
+}
