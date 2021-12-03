@@ -1,0 +1,66 @@
+#GridContainer {
+    display: grid;
+    grid-template-areas: 
+    'header header header' 'left main main' 'left main main'
+    ;
+}
+
+#item1 {
+    grid-area: header;
+    width: 100%;
+    background-color: yellow;
+    height: 33vh;
+}
+
+#item2 {
+    grid-area: left;
+    width: 100%;
+    background-color: blue;
+    height: 66vh;
+}
+
+
+#item3 {
+    grid-area: main;
+    width: 100%;
+    background-color: red;
+    height: 66vh;
+
+}
+
+/*responsice web design*/
+@media only screen and (max-width:600px) {
+   body {
+    background-color: green;
+   } 
+   #GridContainer {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'left'
+    ;
+  }
+} 
+
+div {
+    height: 96vh;
+    display: flex;
+    justify-content: center;
+}
+button {
+    height: 20%;
+    font-size: 50px;
+    background-color: yellow;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: 5;
+}
+
+@keyframes blink {
+    0% {background-color: yellow; border-radius: 0%;}
+    25% {background-color: white; border-radius: 50%;}
+    50% {background-color: yellow; border-radius: 100%;}
+    75% {background-color: white; border-radius: 50%;}
+    100% {background-color: yellow; border-radius: 0%;}
+}
