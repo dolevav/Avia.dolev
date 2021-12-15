@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}CV{% endblock%}
+
+{% block tohen %}
+
+    onload="thankyou()">
+        <button id="Button" onclick="thankyou()">Click here</button><br><br>
+        <div id="container">
+
+            <div id="header">
+                <h1> CV</h1>
+            </div>
+
+            <div id="MI">
+                <h2> my information</h2>
+                <p>
+                    my name is Avia Dolev <br>
+                    from tlv
+                </p>
+            </div>
+
+            <div id="MW">
+                <h2> my work </h2>
+                <p>
+                    i work before in...
+                </p>
+            </div>
+
+            <div id="CO">
+                <form action="">
+                    <h1>contact with us</h1>
+                    <label for="">
+                        Full Name:
+                    </label>
+                    <input type="text"> <br>
+                    <label for="" class="EmailL">
+                        Email:
+                    </label>
+                    <input id="Email" type="email" required pattern="+.@+."> <br>
+                    <label for="">
+                        notes
+                    </label><br>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </form>
+                <button onclick="validation()">send</button>
+            </div>
+    </div>
+
+{% endblock %}

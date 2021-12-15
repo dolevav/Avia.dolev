@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block tohen %}
+  <h1>About me...</h1>
+    <h2>Name: {{ name | default('unknown', true) | upper()}} {{ second_name| upper() }}</h2>
+    <h2>University: {{ university  | default('unspecify', true)}}</h2>
+    <ol>
+        <li>{{ degrees[0] }}</li>
+        <li>{{ degrees[1] }}</li>
+    </ol>
+    <h2>Hobbies:</h2>
+    <ul>
+        {% for hobby in hobbies %}
+            <il>{{ hobby }}</il>
+        {% endfor %}
+    </ul>

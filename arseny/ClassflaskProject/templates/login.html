@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+    <h1>WELCOME</h1>
+{%  include 'myfooter.html' %}
+{% extands 'base.html' %}
+
+{% block title %}
+    login
+{% endblock %}
+
+{% block tohen %}
+    <h1>loging</h1>
+
+    <form action="/"  method="POST">
+        USERNAME: <input> name="username" type="text">
+        PASSWORD: <input> name="password" type="password">
+        <input type="submit">
+    </form>
+
+    {% if session.username %}
+        <h3>welcome. {{ session.username }}</h3>
+    {% else %}
+        USERNAME: <input> name="username" type="text">
+        PASSWORD: <input> name="password" type="password">
+        <input type="submit">
+    {% endif %}
+
+{% endblock %}
+
+
+
+</body>
+</html>

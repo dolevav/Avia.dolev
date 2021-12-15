@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HOME
+{% endblock %}
+
+{% block tohen %}
+    <h1>welocome, {{ session.username | default('guest', true) }}</h1>
+    <h2 class="{% if name  %}logged_in{% else %}sranger{% endif %}"
+
+
+
+
+    {% if name %}
+        <h3><a href="/about">Info about me</a> </h3>
+    {% else %}
+        <h3>Please log in to the website...</h3>
+    {% endif %}
+{% endblock %}

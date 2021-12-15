@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+    <h1>WELCOME</h1>
+{%  include 'myfooter.html' %}
+{% extands 'base.html' %}
+
+{% block title %}
+    catalog
+{% endblock %}
+
+{% block tohen %}
+    {{ super() }}
+    <h1> welcome</h1>
+    <form action="/catalog" method="GET">
+        product: <input name="product" type="text">
+        <input name="size" type="">
+        <input type="submit">
+    </form>
+    {% if p_name %}
+    <h3>you picked product: {{ p_name }}<h3/>
+    {% endif %}
+    {% if s_name %}
+    <h3>you picked size: {{ s_name }}<h3/>
+    {% endif %}
+{% endblock %}
+
+
+
+</body>
+</html>

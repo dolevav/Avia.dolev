@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <a href="/">Home</a> | <a href="/about">About</a>
+        {%  if session.username %}
+         <a href="/logout">LOGOUT</a>
+        {%  endif %}
+        <a href="/login">LOGIN</a>
+    </header>
+</body>
+</html>

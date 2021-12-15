@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+
+{% block title %}this is exc8{% endblock %}
+
+{%  block tohen %}
+    {{  super() }}
+        <h1> about me..</h1>
+    <h2>name: {{ my_profile.name | default('unknown', true) |upper()}} {{ my_profile.second | upper() }}</h2>
+    <h2> university: {{ university | default('unspecified', true)}}</h2>
+   <h2> books: </h2>
+    <ol>
+        {% for box in fav_books %}
+            <li>{{ box }}</li>
+        {%  endfor%}
+    </ol>
+<h2>hobbies</h2>
+    <ul>
+        {% for hobby in hobbies %}
+            <li>{{ hobby }}</li>
+        {%  endfor%}
+    </ul>
+
+    {% if my_profile %}
+        <h3> <a href="cv">go to cv </a></h3>
+    {% else %}
+        <h3> log in to the website</h3>
+    {% endif %}
+
+{% endblock %}
