@@ -1,9 +1,9 @@
 {%  extends 'base.html' %}
 
-{% block title %}this is exc8{% endblock %}
+{% block title %}exc8{% endblock %}
 
 {%  block tohen %}
-    {{  super() }}
+    {{  super () }}
         <h1> about me..</h1>
     <h2>name: {{ my_profile.name | default('unknown', true) |upper()}} {{ my_profile.second | upper() }}</h2>
     <h2> university: {{ university | default('unspecified', true)}}</h2>

@@ -1,0 +1,42 @@
+{%  extends 'base.html' %}
+
+{% block title %}exc9{% endblock %}
+
+{%  block tohen %}
+    {{  super () }}
+        <h1>Welcome to ex9</h1>
+        <form action="/assignment9" method="get">
+            Firstname: <input name="firstname" type="text">
+            Secondname: <input name="secondname" type="text">
+            Age: <input name="age" type="number">
+            <input type="submit">
+        </form>
+
+
+        {% if fn %}
+           {% for user in users %}
+                {% if user['firstname'] == fn %}
+                    <h3>your firstname: {{ fn }} </h3>
+                    <h3>your secondname: {{ sn }} </h3>
+                    <h3>your age: {{ ag }}</h3>
+                {% endif %}
+           {% endfor%}
+        {% else %}
+          {% for user in users %}
+              <li>{{ user }}</li>
+          {% endfor %}
+        {% endif %}
+
+
+        {% if session.username %}
+             <h3>Welcome back, {{ session.username }}! </h3>
+        {% else %}
+              <form action="/assignment9"  method="post">
+              Username: <input name="username" type="text">
+              Password: <input name="password" type="password">
+             <input type="submit">
+         </form>
+        {% endif %}
+
+
+{% endblock %}
