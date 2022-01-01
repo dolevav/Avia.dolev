@@ -63,7 +63,6 @@ def logout_func():
     return render_template('assignment9.html')
 
 
-
 if __name__ == '__main__':
     app.run(debug=True)
 

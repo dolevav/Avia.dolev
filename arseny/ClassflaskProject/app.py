@@ -49,7 +49,7 @@ def catalog_func():
         return render_template('catalog.html', p_name=product, s_name=size)
     return render_template('catalog.html')
 
-@app.routh('/logout')
+@app.route('/logout')
 def logout_func():
     session['username']= ''
     return render_template('index.html')
@@ -69,6 +69,34 @@ def login_func():
             return redirect(url_for('home_func'))
         else:
             return render_template('login.html')
+
+
+@app.route('/users')
+def users_func():
+    users = interact_db(query...)
+    return render_template('users.html', users= )
+
+@app.route('/insert_user', methods=['POST'])
+def insert_user_func():
+    # get the data
+    name = request.form['name']
+    email = request.form['email']
+    password = request.form['password']
+
+    # insert to DB
+    query = "INSERT INTO users(name, email, password) VALUES ('%s', '%s', '%s')" % (name, email, password)
+    ineract_db(query=query, query_type='commit')
+
+    # come back to users
+    return redirect('/users')
+
+@app.route('/delete_users', methods=['POST'])
+def delete_users_func():
+    user_id = request.form['id']
+    query = "DELETE FROM users WHERE id='%s';" % user_id
+    insert_db(query=query,query_type='commit')
+    return redirect('users.html')
+
 
 if __name__ == '__main__':
     app.run()
