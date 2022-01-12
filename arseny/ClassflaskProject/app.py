@@ -97,6 +97,29 @@ def delete_users_func():
     insert_db(query=query,query_type='commit')
     return redirect('users.html')
 
+@app.route('request_For_fronted')
+def fronted_func():
+    return render_template('request_For_fronted.html')
+
+def get_pockemons(num):
+    pokemons = []
+    for i in range(num):
+        random_n = random.randint(1, 100)
+        res = requests.get(f'https://pokeapi.co/api/v2/pokemon/{random_n}')
+        # res = requests.get('https://pokeapi.co/api/v2/pokemon/%s' % random_n)
+        res = res.json()
+        pokemons.append(res)
+    return pokemons
+
+@app.route('request_For_backend')
+def fronted_func():
+    num = 3
+    if "number" in request.args:
+         num = int(request.args['number'])
+    pockemons = get_pockemons(num)
+    return render_template('req_backend.html', pockemons=pockemons)
+    return render_template('request_For_backend.html')
+
 
 if __name__ == '__main__':
     app.run()

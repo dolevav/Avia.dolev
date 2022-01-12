@@ -1,0 +1,25 @@
+{%  extends 'base.html' %}
+
+{% block title %}outer_source_ex11{% endblock %}
+
+{%  block tohen %}
+    {{  super () }}
+        <h1>Welcome to outer_source_ex11</h1>
+        <h2>
+        Users
+        </h2>
+        <form action="/outer_source_ex11">
+        <input type="number" value="number">
+        <input type="submit" value="Get users">
+         </form>
+         {% if users %}
+              {% for user in users %}
+                 <h3>user: {{ user.id }}: </h3>
+                 <h4>Name: {{ user.name }}</h4>
+                 <h4>age: {{ user.age }}</h4>
+                 <hr>
+              {% end for %}
+         {% end if %}
+
+
+{% endblock %}

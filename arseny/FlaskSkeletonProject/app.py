@@ -1,4 +1,6 @@
 from flask import Flask
+import requests
+import random
 
 
 ###### App setup

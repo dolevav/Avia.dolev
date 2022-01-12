@@ -1,0 +1,19 @@
+{%  extends 'base.html' %}
+
+{% block title %}users_ex11{% endblock %}
+
+{%  block tohen %}
+    {{  super () }}
+        <h1>Welcome to users_ex11</h1>
+        <h2>
+             Users list <button onclick="getUsers()">GET USERS</button>
+         </h2>
+
+         <main>
+
+         </main>
+        <script src="/static/js/for_Users_Ex11.js"></script>
+
+        {{ users }}
+
+{% endblock %}

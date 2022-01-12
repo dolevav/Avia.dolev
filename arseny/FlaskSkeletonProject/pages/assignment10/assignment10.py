@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, Flask
+from flask import Blueprint, render_template, request, redirect
 
 from app import app
 from interact_with_DB import interact_db
