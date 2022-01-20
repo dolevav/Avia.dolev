@@ -104,5 +104,25 @@ def outer_source_ex11_func():
         return render_template('outer_source_ex11.html', users=users)
 
 
+@app.route('/assignment12', defaults={'USER_ID': 1})
+@app.route('/assignment12/<int:USER_ID>')
+def get_users_func(USER_ID):
+    query = 'select * from users where id="%s";' % USER_ID
+    users = interact_db(query=query, query_type='fetch')
+    if len(users) == 0:
+        return_dict = {
+            'status': 'failed',
+            'massage': 'User not found'
+        }
+    else:
+        return_dict = {
+            'status': 'success',
+            'id': users[0].id,
+            'name': users[0].name,
+            'age': users[0].age,
+        }
+    return jsonify(return_dict)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
